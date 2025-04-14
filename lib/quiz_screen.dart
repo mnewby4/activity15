@@ -73,13 +73,15 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     if (_loading) {
       return Scaffold(
-        body: Column(
+        body: Center(child: Column(
           children: <Widget>[
-            CircularProgressIndicator(), 
-            Text("Loading... Please wait...", style: TextStyle()),
+            SizedBox(height: 450),
+            Text("Loading, please wait..."),
+            SizedBox(height: 20),
+            CircularProgressIndicator(),
           ],
         ),
-      );
+      ), );
     }
 
     if (_currentQuestionIndex >= _questions.length) {
